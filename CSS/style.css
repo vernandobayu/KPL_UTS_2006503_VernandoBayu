@@ -1,0 +1,73 @@
+body{
+    background: rgb(225, 225, 225);
+}
+
+
+.navbar-brand{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#judul{
+    margin-top: 10px;
+}
+
+.container{
+        margin-top: 50px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+textarea{
+    resize: none;
+    
+}
+
+#r1{
+    width: 400px;
+    background: blue;
+    border-radius: 5px;
+}
+.col-heading{
+    /* background: red; */
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+}
+
+#r1-col-2{
+    background: rgb(245, 236, 236);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#golongan-sty{
+    /* width: 100%; */
+    border-radius: 5px;
+    margin: 10px 10px 10px 0px;
+    float: left;
+    border-radius: 5px;
+}
+#tunjangan-sty{
+    float: left;
+    margin: 10px;
+    border-radius: 5px;
+}
+#potongan-sty label{
+    margin-right: 20px;
+}
+#potongan-sty input{
+    margin-left: 5px;
+}
+
+#r2{
+    width: 400px;
+    background: rgb(130, 130, 221);
+    border-radius: 5px;
+}
+#r2-col-2{
+    background: rgb(245, 236, 236);
+    padding: 5px;
+    border-radius: 5px;
+}

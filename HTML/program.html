@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penghitungan Gaji</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+
+<body>
+    <nav class="navbar" style="background-color: rgb(37, 14, 68);">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" style="color: rgb(255, 255, 255); ">
+            <img src="/IMG/gedung.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+            PT Selamat Sukses
+          </a>
+        </div>
+    </nav>
+    
+    <main>
+    <div id="judul">
+        <center>
+            <h1>Menghitung Gaji Pegawai</h1>
+        </center>
+    </div>
+    <div class="container">
+        <div class="row">
+         <div class="col">
+         <div id="content1">
+             <div class="container">
+                 <div class="row" id="r1">
+                     <div class="panel-primary">
+                         <div class="col-heading">
+                                    <h5>Input Identitas</h5>
+                        </div>
+                         <div class="col-body" id="r1-col-2">
+                                    <form action="" id="myForm">
+                                        <div class="form-group">
+                                            <label for="nik">NIK</label>
+                                            <input type="text" class="form-control" id="nik" autocomplete="off" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="name">Nama</label>
+                                            <input type="text" class="form-control" id="name" autocomplete="off" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="jns_klm">Jenis Kelamin</label>
+                                            <input type="text" class="form-control" id="jns_klm" autocomplete="off" required>
+                                        </div>
+                                        <div class="form-group" id="golongan-sty">
+                                            <label for="golongan">Golongan</label>
+                                            <select id="golongan" >
+                                                <optgroup label="Pilih">
+                                                    <option value="1" >1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                </optgroup>
+                                            </select>
+                                        </div>
+                                        <div class="form-group" id="tunjangan-sty">
+                                            <label for="tunjangan">Masa Bakti</label>
+                                            <select id="tunjangan" >
+                                                <optgroup label="Pilih">
+                                                    <option value="0-2 tahun" > <span>0-2 tahun</span></option>
+                                                    <option value="2-5 tahun"><span>2-5 tahun</span></option>
+                                                    <option value="5 tahun"> <span>5 tahun</span>  </option>
+                                                </optgroup>
+                                            </select>
+                                        </div>
+                                        <div class="form-group" id="potongan-sty" >
+                                            <label for="Asuransi">Berlangganan Asuransi?</label>
+                                            <input type="radio" id="Asuransi" name="asuran" value="Ya" required> Iya
+                                            <input type="radio" id="Asuransi" name="asuran" value="Tidak" required> Tidak
+                                        </div>
+                                        
+                                    </form>
+                        </div>
+                         <div class="col-footer">
+                            <input onclick="result()" class="btn btn-primary" type="button" value="Input" style="margin: 10px; background: red; ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+         <div class="col">
+         <div id="content2">
+             <div class="container">
+                 <div class="row" id="r2">
+                     <div class="panel-primary">
+                         <div class="col-heading">
+                            <h5>Hasil Inputan</h5>
+                        </div>
+                         <div class="col-body" id="r2-col-2">
+                            <div class="form-group">
+                                <label for="nik">NIK</label>
+                                <textarea name="nik" id="nik_result" cols="30" rows="1" class="form-control" disabled></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Nama</label>
+                                <textarea name="name" id="nama_result" cols="30" rows="1" class="form-control" disabled></textarea>
+                            </div>
+                            <div class="form-group" style="float: left; margin-right: 17px;">
+                                <label for="golongan">Golongan: </label>
+                                <span id="golongan_result"></span>
+                            </div>
+                            <div class="form-group" style="float: left; margin-right: 17px;">
+                                <label for="Masa Bakti">Masa Bakti: </label>
+                                <span id="tunjangan_result"></span>
+                            </div>
+                            <div class="form-group" style="float: none;">
+                                <label for="Asuransi">Asuransi: </label>
+                                <span id="asuransi_result"></span>
+                            </div>
+                            <div class="form-group" style="margin-top: 10px;">
+                                <label for="gaji">Total Pendapatan</label>
+                                <textarea name="gaji" id="gaji_result" cols="30" rows="1" class="form-control" disabled></textarea>
+                            </div>
+                        </div>
+                         <div class="col-footer">
+                            <input onclick="resetall()" class="btn btn-primary" type="reset" value="Reset" style="margin: 10px; background: red; ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+     </div>
+    </main>
+
+
+    <script src="/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
